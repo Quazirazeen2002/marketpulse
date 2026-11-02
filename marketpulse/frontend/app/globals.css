@@ -1,0 +1,167 @@
+@import "tailwindcss";
+
+:root {
+  /* MrBeast Brand Palette Design Tokens */
+  --market-blue: #08B0D5;        /* Iconic MrBeast Electric Cyan */
+  --market-blue-hover: #068AA8;
+  --market-pink: #E3447C;        /* Iconic MrBeast Lightning Hot Pink */
+  --market-pink-hover: #C93268;
+  --market-black: #0D1117;       /* Deep High-Contrast Beast Black */
+  --market-white: #FFFFFF;
+  --market-frost: #F4F8FA;       /* Clean Cool Beast Base Canvas */
+  --market-gray-soft: #E2E8F0;
+  --market-gray-muted: #64748B;
+  --market-border: #0D1117;
+
+  /* Aliases for compatibility */
+  --market-yellow: #08B0D5;      /* Main brand accent remapped to Beast Cyan */
+  --market-yellow-hover: #068AA8;
+  --market-cream: #F4F8FA;       /* Base remapped to Frost */
+  --market-red: #E3447C;         /* Red remapped to Beast Hot Pink */
+
+  --background: var(--market-frost);
+  --foreground: var(--market-black);
+}
+
+body {
+  background-color: var(--market-frost);
+  color: var(--market-black);
+  font-family: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Typography Classes */
+.font-display {
+  font-family: var(--font-space), var(--font-inter), system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Typographic Scale */
+.text-display-xl {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  line-height: 0.95;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.text-display-l {
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  line-height: 1.0;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
+/* High-Contrast MrBeast Neo-Brutalist Box Shadows */
+.shadow-market-sm {
+  box-shadow: 2px 2px 0px 0px #0D1117;
+}
+
+.shadow-market {
+  box-shadow: 4px 4px 0px 0px #0D1117;
+}
+
+.shadow-market-lg {
+  box-shadow: 6px 6px 0px 0px #0D1117;
+}
+
+.shadow-market-xl {
+  box-shadow: 8px 8px 0px 0px #0D1117;
+}
+
+.shadow-market-cyan {
+  box-shadow: 4px 4px 0px 0px #08B0D5;
+}
+
+.shadow-market-pink {
+  box-shadow: 4px 4px 0px 0px #E3447C;
+}
+
+/* Interactive Button Hover Physics */
+.btn-market {
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid #0D1117;
+}
+.btn-market:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px #0D1117;
+}
+.btn-market:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px 0px #0D1117;
+}
+
+/* Reusable MarketPulse Card */
+.card-market {
+  background-color: #FFFFFF;
+  border: 2px solid #0D1117;
+  box-shadow: 4px 4px 0px 0px #0D1117;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card-market:hover {
+  transform: translateY(-2px);
+  box-shadow: 6px 6px 0px 0px #0D1117;
+}
+
+/* Continuous Marquee Ticker */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Pulse Animation for Live Agent Observatory */
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F4F8FA;
+}
+::-webkit-scrollbar-thumb {
+  background: #0D1117;
+  border: 2px solid #F4F8FA;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #08B0D5;
+}
+
+/* Respect Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

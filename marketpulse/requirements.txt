@@ -1,0 +1,27 @@
+# MARKETPULSE — Production Dependencies (FastAPI + Jinja2 + LangGraph)
+# Zero Gradio dependencies.
+
+fastapi>=0.115.0
+uvicorn>=0.30.0
+jinja2>=3.1.4
+pydantic>=2.8.0
+pydantic-settings>=2.4.0
+sqlmodel>=0.0.22
+sqlalchemy>=2.0.30
+langgraph>=0.2.0
+langchain-core>=0.3.0
+langchain-openai>=0.2.0
+openai>=1.40.0
+httpx>=0.27.0
+trafilatura>=2.0.0
+beautifulsoup4>=4.12.3
+pymupdf>=1.24.0
+rapidfuzz>=3.9.0
+python-dateutil>=2.9.0
+python-dotenv>=1.0.1
+tenacity>=8.5.0
+lxml_html_clean>=0.2.0
+tavily-python>=0.5.0
+pytest>=8.0.0
+# MCP JSON-RPC 2.0 Protocol Engine included in app/mcp_servers/ (compatible with official Python MCP SDK)
+# Chart.js loaded via CDN in templates/base.html
